@@ -38,7 +38,7 @@ check(pkg.publishConfig?.access === 'public', 'publishConfig.access 不是 publi
 for (const required of ['index.js', 'client.js', 'icon.svg', 'README.md', 'SECURITY.md', 'THIRD_PARTY_NOTICES.md', 'docs/MARKET_SUBMISSION.md']) {
   check(await stat(path.join(ROOT, required)).then((item) => item.isFile()).catch(() => false), `缺少发布文件：${required}`);
 }
-for (const doc of ['CHANGELOG.md', 'docs/MARKET_SUBMISSION.md', 'docs/RELEASE_NOTES_1.6.0.md']) {
+for (const doc of ['CHANGELOG.md', 'docs/MARKET_SUBMISSION.md', `docs/RELEASE_NOTES_${pkg.version}.md`]) {
   const content = await read(doc).catch(() => '');
   check(content.includes(pkg.version), `${doc} 与 package.json 版本不一致`);
 }

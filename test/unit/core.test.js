@@ -102,7 +102,7 @@ test('skills: real YAML (multi-line description), shipped packages, duplicates, 
   } finally { await rm(dir, { recursive: true, force: true }); }
 });
 
-test('files: all eight formats generate, reopen and round-trip', async () => {
+test('files: all eight formats generate and reopen, or PDF safely refuses mojibake without a CJK font', async () => {
   const dir = await mkdtemp(path.join(os.tmpdir(), 'eew-files-'));
   try {
     const content = {
@@ -124,9 +124,15 @@ test('files: all eight formats generate, reopen and round-trip', async () => {
         assert.ok(reopened.text.length > 0 || format === 'pdf', `${format} 必须能重新打开并读取`);
       } catch (error) {
         results[format] = { failed: error.code ?? 'error', message: error.message };
+        if (format === 'pdf' && error.code === 'dependency_unavailable') {
+          assert.match(error.message, /中文字体/);
+          assert.ok(Array.isArray(error.details?.candidates) && error.details.candidates.length > 0);
+          continue;
+        }
         throw error;
       }
     }
+    assert.deepEqual(Object.keys(results).sort(), capabilityMatrix().map(({ format }) => format).sort());
     console.log('[format-smoke]', JSON.stringify(results));
   } finally { await rm(dir, { recursive: true, force: true }); }
 });

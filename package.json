@@ -1,6 +1,6 @@
 {
   "name": "dsh-enterprise-expert-workspace",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "description": "企业 AI 专家工作台：把资料转成可追溯任务、跨部门工作流和可下载成果，覆盖知识、人力、销售、采购、数据与文档。",
   "type": "module",
   "main": "./index.js",

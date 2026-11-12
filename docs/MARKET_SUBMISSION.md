@@ -8,13 +8,15 @@
 |---|---|
 | 插件名称 | 企业 AI 专家工作台 |
 | 插件 ID / npm 包名 | `dsh-enterprise-expert-workspace` |
-| 版本 | `1.6.0` |
+| 版本 | `1.6.1` |
 | 一句话简介 | 把企业资料转成可追溯任务、跨部门工作流和可下载成果，而不只是一次对话。 |
 | 分类建议 | 企业效率、知识管理、工作流、数据分析 |
 | 许可证 | MIT（SPDX：`MIT`） |
 | 源码仓库 | `https://github.com/shudi729/dsh-enterprise-expert-workspace` |
-| npm | `https://www.npmjs.com/package/dsh-enterprise-expert-workspace` |
-| 安装命令 | `dsh plugin --profile web add dsh-enterprise-expert-workspace` |
+| GitHub Release | `https://github.com/shudi729/dsh-enterprise-expert-workspace/releases/tag/v1.6.1` |
+| npm | 待发布；预留地址 `https://www.npmjs.com/package/dsh-enterprise-expert-workspace` |
+| 当前安装命令 | `dsh plugin --profile web add ./dsh-enterprise-expert-workspace-1.6.1.tgz` |
+| npm 发布后安装命令 | `dsh plugin --profile web add dsh-enterprise-expert-workspace` |
 
 ## 市场长描述
 
@@ -31,12 +33,12 @@
 | 标准 | 准备状态 | 证据 |
 |---|---|---|
 | DSH 兼容信号 | 已准备 | `package.json` 含 `dsh.bundle.patch`，指向 `cordis.patch.yml` |
-| README 安装说明 | 已准备 | README 含真实包名、Web/Desktop profile、首次使用、升级、卸载和排障 |
+| README 安装说明 | 已准备 | README 区分当前 GitHub `.tgz` 安装与未来 npm 安装，含 Web/Desktop profile、首次使用、升级、卸载和排障 |
 | SPDX 开源许可证 | 已准备 | `package.json: license=MIT`，仓库含 `LICENSE` |
 | 插件 ID 合规 | 已准备 | `dsh-enterprise-expert-workspace` 符合 `^[a-z0-9]+(-[a-z0-9]+)*$` |
 | 源码可扫描 | 已准备 | 发布仓库包含 JS 源码、patch、Skill 与文档，不是纯文档仓库 |
 | 安全扫描 | 本地通过 | 生产依赖 `pnpm audit --prod` 无已知漏洞；仍需以 dsh.so 在线扫描为准 |
-| GitHub Topic | 待发布时设置 | `dsh-plugin`、`deepseek-harness`、`enterprise-ai`、`workflow` |
+| GitHub Topic | 已设置 | `dsh-plugin`、`deepseek-harness`、`enterprise-ai`、`workflow` 等 |
 | 已发布 tarball 扫描 | 待发布后执行 | dsh.so 检查公开 npm tarball；发布前不能声称通过 |
 
 ## 权限与联网说明

@@ -22,12 +22,12 @@
 
 - [ ] 使用独立公开仓库，不公开包含私人历史的大仓库。
 - [ ] 设置仓库简介和 Topics：`dsh-plugin`、`deepseek-harness`、`enterprise-ai`、`workflow`。
-- [ ] 推送 `main`，创建签名或可追溯 tag `v1.6.0`，创建 Release 并附 `.tgz` 与 SHA-256。
+- [ ] 推送 `main`，创建签名或可追溯 tag `v1.6.1`，创建 Release 并附 `.tgz` 与 SHA-256。
 
 ## npm（执行发布时）
 
 - [ ] 确认 npm 登录账号、registry、包名占用和发布权限。
-- [ ] 发布 `1.6.0`，不覆盖既有版本。
+- [ ] 发布 `1.6.1`，不覆盖既有版本。
 - [ ] 查询公开 registry，核对版本、tarball、README、许可证和仓库地址。
 - [ ] 从公开 npm 再安装一次并复验 bundle 激活与核心任务。
 

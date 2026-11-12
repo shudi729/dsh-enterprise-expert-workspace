@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.6.1 - 2026-11-12
+
+- Corrected installation guidance for the GitHub-only release stage so users install the verified local tarball instead of an unpublished npm package.
+- Made the cross-platform PDF test accept only two explicit outcomes: verified Chinese PDF generation when a CJK font exists, or a clear dependency error that prevents mojibake when it does not.
+- Made release-note verification follow the package version instead of a hard-coded filename.
+
 ## 1.6.0 - 2026-11-12
 
 - Prepared the first public, market-ready release under `dsh-enterprise-expert-workspace` with the Chinese display name “企业 AI 专家工作台”.

@@ -60,10 +60,17 @@
 
 兼容范围来自真实安装和运行验证，不把尚未测试的版本写成“已兼容”。
 
+### 当前发布状态
+
+`v1.6.1` 已通过 GitHub Release 公开发布；npm 和 dsh.so 尚未发布。现阶段请从 GitHub Release 下载经过校验的 `.tgz`，不要直接执行 npm 包名安装命令。
+
 ### 安装到 Web profile
 
+1. 下载 [dsh-enterprise-expert-workspace-1.6.1.tgz](https://github.com/shudi729/dsh-enterprise-expert-workspace/releases/download/v1.6.1/dsh-enterprise-expert-workspace-1.6.1.tgz)。
+2. 在下载目录执行：
+
 ```sh
-dsh plugin --profile web add dsh-enterprise-expert-workspace
+dsh plugin --profile web add ./dsh-enterprise-expert-workspace-1.6.1.tgz
 ```
 
 安装完成后重启对应 profile，并刷新页面。左侧栏出现“企业 AI 专家工作台”，即表示 Host 与 Web 客户端均已加载。
@@ -71,8 +78,10 @@ dsh plugin --profile web add dsh-enterprise-expert-workspace
 如果 Desktop 使用的不是 `web` profile，请替换为实际 profile 名称：
 
 ```sh
-dsh plugin --profile <profile-name> add dsh-enterprise-expert-workspace
+dsh plugin --profile <profile-name> add ./dsh-enterprise-expert-workspace-1.6.1.tgz
 ```
+
+发布到 npm 后，安装命令将简化为 `dsh plugin --profile web add dsh-enterprise-expert-workspace`；在 npm 页面可查询到版本前，请勿使用该命令。
 
 ### 第一次使用
 
@@ -87,7 +96,7 @@ dsh plugin --profile <profile-name> add dsh-enterprise-expert-workspace
 | Word `.docx` | ✓ | ✓ | 提取正文并生成可编辑文档 |
 | Excel `.xlsx` | ✓ | ✓ | 读取工作表并生成真实表格文件 |
 | PowerPoint `.pptx` | ✓ | ✓ | 提取幻灯片文字并生成演示文稿 |
-| PDF | ✓ | ✓ | 支持有文本层的 PDF；扫描件暂不含 OCR |
+| PDF | ✓ | ✓ | 支持有文本层的 PDF；生成中文 PDF 需要系统中文字体；扫描件暂不含 OCR |
 
 上传单文件读取上限为 25 MiB。公开发行版不附带本机知识原件、书籍摘录、私人业务数据、账号或密钥；用户应只导入自己有权使用的资料。
 
@@ -122,7 +131,9 @@ dsh plugin --profile <profile-name> add dsh-enterprise-expert-workspace
 
 ## 升级与卸载
 
-升级：
+GitHub Release 阶段升级：下载新版本 `.tgz`，在同一 profile 中重新执行 `dsh plugin ... add ./新版本.tgz`。发行包已在隔离 profile 中验证此安装方式；升级前仍建议备份业务数据。
+
+npm 发布后的升级命令：
 
 ```sh
 dsh plugin --profile web update dsh-enterprise-expert-workspace
@@ -153,6 +164,10 @@ dsh plugin --profile web remove dsh-enterprise-expert-workspace
 ### PDF 没有提取到文字
 
 扫描版 PDF 没有文本层，当前版本不含 OCR。请先完成 OCR，或改为上传可复制文本的 PDF、Word 或图片识别结果。
+
+### 生成中文 PDF 时提示缺少字体
+
+插件不会用不支持中文的字体生成乱码。请安装常见中文 TTF/TTC 字体后重试，或改用 DOCX、PPTX、Markdown 等成果格式。
 
 ### 比较结果提示“需要确认”
 
@@ -186,7 +201,7 @@ pnpm run verify:archive
 ## 项目与反馈
 
 - GitHub：<https://github.com/shudi729/dsh-enterprise-expert-workspace>
-- npm：<https://www.npmjs.com/package/dsh-enterprise-expert-workspace>
+- npm：尚未发布；发布后地址为 <https://www.npmjs.com/package/dsh-enterprise-expert-workspace>
 - 问题反馈：<https://github.com/shudi729/dsh-enterprise-expert-workspace/issues>
 - 安全问题：请使用 GitHub 私密漏洞报告，不要在公开 Issue 中粘贴密钥、客户数据或原始业务文件。
 

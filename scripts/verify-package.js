@@ -24,7 +24,7 @@ const CRITICAL = [
   'assets/skills/sales-opportunity-card/SKILL.md',
   'assets/skills/sales-material/SKILL.md',
   'assets/skills/sales-visit-plan/SKILL.md',
-  'docs/ARCHITECTURE.md', 'docs/PRIVACY.md', 'docs/MARKET_SUBMISSION.md', 'docs/RELEASE_NOTES_1.6.0.md',
+  'docs/ARCHITECTURE.md', 'docs/PRIVACY.md', 'docs/MARKET_SUBMISSION.md', `docs/RELEASE_NOTES_${version}.md`,
   'LICENSE', 'SECURITY.md', 'CHANGELOG.md', 'THIRD_PARTY_NOTICES.md',
 ];
 
