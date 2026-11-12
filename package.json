@@ -81,7 +81,7 @@
     "js-yaml": "4.3.2",
     "jszip": "3.10.1",
     "pdf-parse": "1.1.1",
-    "pdfkit": "0.15.2"
+    "pdfkit": "0.20.2"
   },
   "scripts": {
     "verify:matrix": "node scripts/verify-matrix.js",
