@@ -1,0 +1,58 @@
+[
+  {
+    "format": "md",
+    "read": true,
+    "generate": true,
+    "verify": true,
+    "note": "UTF-8 Markdown，按标题分节"
+  },
+  {
+    "format": "txt",
+    "read": true,
+    "generate": true,
+    "verify": true,
+    "note": "UTF-8 纯文本"
+  },
+  {
+    "format": "csv",
+    "read": true,
+    "generate": true,
+    "verify": true,
+    "note": "逗号分隔，首行表头，支持引号转义"
+  },
+  {
+    "format": "json",
+    "read": true,
+    "generate": true,
+    "verify": true,
+    "note": "结构化成果与导入导出"
+  },
+  {
+    "format": "pdf",
+    "read": true,
+    "generate": true,
+    "verify": "ascii",
+    "note": "读取用 pdf-parse；生成用 pdfkit，中文需系统中文字体，回读校验用 ASCII 标记"
+  },
+  {
+    "format": "docx",
+    "read": true,
+    "generate": true,
+    "verify": true,
+    "note": "读取提取 word/document.xml；生成用 docx 包"
+  },
+  {
+    "format": "xlsx",
+    "read": true,
+    "generate": true,
+    "verify": true,
+    "note": "读取/生成用内置 Open XML 处理器"
+  },
+  {
+    "format": "pptx",
+    "read": true,
+    "generate": true,
+    "verify": true,
+    "note": "读取提取 ppt/slides/*.xml；生成用内置 Open XML 模板"
+  }
+]

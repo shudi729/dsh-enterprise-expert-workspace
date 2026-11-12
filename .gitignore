@@ -1,0 +1,16 @@
+node_modules/
+.env
+.env.*
+!.env.example
+.credentials
+*.pem
+*.key
+coverage/
+test/.dsh-home/
+test/runtime/
+test/work/
+dist/
+*.tgz
+*.log
+.DS_Store
+Thumbs.db

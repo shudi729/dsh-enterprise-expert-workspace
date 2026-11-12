@@ -1,0 +1,2404 @@
+[
+  {
+    "name": "knowledge-retrieve",
+    "description": "可靠文本检索并返回可回溯引用",
+    "executor": "knowledge.retrieve",
+    "domain": "shared",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "query",
+        "hint": "检索词",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "可靠文本检索并返回可回溯引用",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "knowledge-ingest",
+    "description": "导入资料为待核实知识并去重",
+    "executor": "knowledge.ingest",
+    "domain": "shared",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "title",
+        "hint": "条目标题",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "text",
+        "hint": "正文",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "导入资料为待核实知识并去重",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "knowledge-verify",
+    "description": "按用户判断更新知识可信级别",
+    "executor": "knowledge.verify",
+    "domain": "shared",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "docId",
+        "hint": "知识条目 ID",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "按用户判断更新知识可信级别",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "task-plan",
+    "description": "目标拆解与优先级",
+    "executor": "task.plan",
+    "domain": "shared",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "goal",
+        "hint": "目标",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "目标拆解与优先级",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "task-actions",
+    "description": "会议行动清单",
+    "executor": "task.actions",
+    "domain": "shared",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "meetingNotes",
+        "hint": "会议纪要",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "会议行动清单",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "task-review",
+    "description": "周月复盘",
+    "executor": "task.review",
+    "domain": "shared",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "goal",
+        "hint": "目标",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "feedback",
+        "hint": "执行反馈",
+        "required": false,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "周月复盘",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "report-build",
+    "description": "按章节与引用组装综合报告",
+    "executor": "report.build",
+    "domain": "shared",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "title",
+        "hint": "报告标题",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "按章节与引用组装综合报告",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "external-confirm",
+    "description": "记录外部操作的显式确认点",
+    "executor": "external.confirm",
+    "domain": "shared",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "action",
+        "hint": "待确认的外部操作",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "记录外部操作的显式确认点",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "km-review",
+    "description": "项目资料复盘：背景、决策、结果、经验",
+    "executor": "km.review",
+    "domain": "knowledge-management",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "project",
+        "hint": "项目名称",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "material",
+        "hint": "项目资料",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "项目资料复盘：背景、决策、结果、经验",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "km-case-card",
+    "description": "生成含适用条件的经验卡",
+    "executor": "km.caseCard",
+    "domain": "knowledge-management",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "project",
+        "hint": "项目名称",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "material",
+        "hint": "案例材料",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "生成含适用条件的经验卡",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "km-sop",
+    "description": "从已验证材料提炼标准作业流程",
+    "executor": "km.sop",
+    "domain": "knowledge-management",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "material",
+        "hint": "流程材料",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "从已验证材料提炼标准作业流程",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "km-publish",
+    "description": "审核并把知识条目设为可信",
+    "executor": "km.publish",
+    "domain": "knowledge-management",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "docId",
+        "hint": "知识条目 ID",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "审核并把知识条目设为可信",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "hr-job-analysis",
+    "description": "岗位分析：职责、能力、评估维度",
+    "executor": "hr.jobAnalysis",
+    "domain": "hr",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "role",
+        "hint": "岗位名称",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "responsibilities",
+        "hint": "职责清单",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "岗位分析：职责、能力、评估维度",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "hr-jd",
+    "description": "生成岗位说明书并核对字段",
+    "executor": "hr.jd",
+    "domain": "hr",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "role",
+        "hint": "岗位名称",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "requirements",
+        "hint": "任职要求",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "生成岗位说明书并核对字段",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "hr-resume-extract",
+    "description": "从简历文本真实提取字段",
+    "executor": "hr.resumeExtract",
+    "domain": "hr",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "resumeText",
+        "hint": "简历文本",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "从简历文本真实提取字段",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "hr-compare-candidates",
+    "description": "按维度加权计算候选人对比",
+    "executor": "hr.compareCandidates",
+    "domain": "hr",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "candidates",
+        "hint": "候选人数组（含 scores）",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "按维度加权计算候选人对比",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "hr-interview-design",
+    "description": "生成面试问题、评分锚点与记录栏",
+    "executor": "hr.interviewDesign",
+    "domain": "hr",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "role",
+        "hint": "岗位名称",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "criteria",
+        "hint": "评估维度",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "生成面试问题、评分锚点与记录栏",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "hr-onboarding",
+    "description": "入职与培养阶段计划",
+    "executor": "hr.onboarding",
+    "domain": "hr",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "role",
+        "hint": "岗位名称",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "入职与培养阶段计划",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "personal-goal-breakdown",
+    "description": "岗位目标拆解为可执行任务",
+    "executor": "personal.goalBreakdown",
+    "domain": "personal",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "goal",
+        "hint": "目标",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "岗位目标拆解为可执行任务",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "personal-weekly-plan",
+    "description": "生成周计划与执行反馈栏",
+    "executor": "personal.weeklyPlan",
+    "domain": "personal",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "goal",
+        "hint": "本周目标",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "生成周计划与执行反馈栏",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "personal-meeting-actions",
+    "description": "会议行动项与责任截止",
+    "executor": "personal.meetingActions",
+    "domain": "personal",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "meetingNotes",
+        "hint": "会议纪要",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "会议行动项与责任截止",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "personal-review",
+    "description": "周月复盘与偏差记录",
+    "executor": "personal.review",
+    "domain": "personal",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "goal",
+        "hint": "目标",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "feedback",
+        "hint": "执行反馈",
+        "required": false,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "周月复盘与偏差记录",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "personal-report",
+    "description": "汇总进展、风险与下一步",
+    "executor": "personal.report",
+    "domain": "personal",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "goal",
+        "hint": "目标",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "汇总进展、风险与下一步",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "management-diagnose",
+    "description": "按 target/actual 计算经营偏差",
+    "executor": "management.diagnose",
+    "domain": "management",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "metrics",
+        "hint": "经营指标数组",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "按 target/actual 计算经营偏差",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "management-improve-plan",
+    "description": "问题到改进动作与复查点",
+    "executor": "management.improvePlan",
+    "domain": "management",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "problems",
+        "hint": "问题清单",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "问题到改进动作与复查点",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "management-responsibility",
+    "description": "职责协作与验收分解",
+    "executor": "management.responsibility",
+    "domain": "management",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "actions",
+        "hint": "行动清单",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "职责协作与验收分解",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "management-report",
+    "description": "经营报告",
+    "executor": "management.report",
+    "domain": "management",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "metrics",
+        "hint": "经营数据",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "经营报告",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "sales-account-research",
+    "description": "客户研究与关键角色证据",
+    "executor": "sales.accountResearch",
+    "domain": "sales",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "customer",
+        "hint": "客户名称",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "material",
+        "hint": "客户资料",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "客户研究与关键角色证据",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "sales-opportunity-card",
+    "description": "商机卡（阶段/角色/需求/证据/下一步）",
+    "executor": "sales.opportunityCard",
+    "domain": "sales",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "customer",
+        "hint": "客户名称",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "商机卡（阶段/角色/需求/证据/下一步）",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "sales-visit-plan",
+    "description": "拜访目标与需验证信息",
+    "executor": "sales.visitPlan",
+    "domain": "sales",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "customer",
+        "hint": "客户名称",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "objective",
+        "hint": "拜访目标",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "拜访目标与需验证信息",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "sales-material",
+    "description": "客户问题—证据—判断—行动材料",
+    "executor": "sales.material",
+    "domain": "sales",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "customer",
+        "hint": "客户名称",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "material",
+        "hint": "素材与证据",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "客户问题—证据—判断—行动材料",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "sales-coach",
+    "description": "销售团队辅导清单",
+    "executor": "sales.coach",
+    "domain": "sales",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "opportunities",
+        "hint": "商机清单",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "销售团队辅导清单",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "research-plan",
+    "description": "研究问题、范围与核验标准",
+    "executor": "research.plan",
+    "domain": "research",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "question",
+        "hint": "研究问题",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "研究问题、范围与核验标准",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "research-collect",
+    "description": "来源台账与可回溯性检查",
+    "executor": "research.collect",
+    "domain": "research",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "sources",
+        "hint": "来源条目",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "来源台账与可回溯性检查",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "research-verify",
+    "description": "逐条核验结论的来源与证据",
+    "executor": "research.verify",
+    "domain": "research",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "claims",
+        "hint": "待核验结论",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "逐条核验结论的来源与证据",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "research-report",
+    "description": "行业与客户研究报告",
+    "executor": "research.report",
+    "domain": "research",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "question",
+        "hint": "研究问题",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "行业与客户研究报告",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "research-opportunities",
+    "description": "市场机会清单与证据强度",
+    "executor": "research.opportunities",
+    "domain": "research",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "signals",
+        "hint": "市场信号",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "市场机会清单与证据强度",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "data-profile",
+    "description": "字段识别、类型与缺失率",
+    "executor": "data.profile",
+    "domain": "data-analysis",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "rows",
+        "hint": "表格数据",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "字段识别、类型与缺失率",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "data-clean",
+    "description": "清洗并输出可复核处理记录",
+    "executor": "data.clean",
+    "domain": "data-analysis",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "rows",
+        "hint": "表格数据",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "清洗并输出可复核处理记录",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "data-quality",
+    "description": "数据质量检查",
+    "executor": "data.quality",
+    "domain": "data-analysis",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "rows",
+        "hint": "表格数据",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "数据质量检查",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "data-metrics",
+    "description": "指标计算与分组比较",
+    "executor": "data.metrics",
+    "domain": "data-analysis",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "rows",
+        "hint": "表格数据",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "field",
+        "hint": "数值字段",
+        "required": false,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "指标计算与分组比较",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "data-compare",
+    "description": "两份表格比较",
+    "executor": "data.compare",
+    "domain": "data-analysis",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "rows",
+        "hint": "A 表数据",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "rightRows",
+        "hint": "B 表数据",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "两份表格比较",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "data-chart",
+    "description": "条形图与可复核数据表",
+    "executor": "data.chart",
+    "domain": "data-analysis",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "rows",
+        "hint": "表格数据",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "条形图与可复核数据表",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "analysis-conclusion",
+    "description": "解释指标并区分统计事实与归因",
+    "executor": "analysis.conclusion",
+    "domain": "data-analysis",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "metrics",
+        "hint": "指标结果",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "解释指标并区分统计事实与归因",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "document-extract",
+    "description": "真实读取文件并提取文本/表格",
+    "executor": "document.extract",
+    "domain": "document",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "path",
+        "hint": "文件路径",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "真实读取文件并提取文本/表格",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "document-compare",
+    "description": "逐行比较两份文本",
+    "executor": "document.compare",
+    "domain": "document",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "leftText",
+        "hint": "文本 A",
+        "required": true,
+        "type": "string"
+      },
+      {
+        "name": "rightText",
+        "hint": "文本 B",
+        "required": false,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "逐行比较两份文本",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "document-template-fill",
+    "description": "模板字段填充与质量检查",
+    "executor": "document.templateFill",
+    "domain": "document",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "material",
+        "hint": "输入资料",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "模板字段填充与质量检查",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "document-compose",
+    "description": "文档整理与写作",
+    "executor": "document.compose",
+    "domain": "document",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "material",
+        "hint": "输入资料",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "文档整理与写作",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "document-deliver",
+    "description": "生成并回读校验成果文件",
+    "executor": "document.deliver",
+    "domain": "document",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "title",
+        "hint": "成果标题",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "生成并回读校验成果文件",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "procurement-requirement",
+    "description": "采购需求拆分",
+    "executor": "procurement.requirement",
+    "domain": "procurement",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "requirement",
+        "hint": "需求说明",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "采购需求拆分",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "procurement-vendor-scan",
+    "description": "供应商台账与证据状态",
+    "executor": "procurement.vendorScan",
+    "domain": "procurement",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "vendors",
+        "hint": "候选供应商",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "供应商台账与证据状态",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "procurement-quote-compare",
+    "description": "询报价整理与比较表",
+    "executor": "procurement.quoteCompare",
+    "domain": "procurement",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "quotes",
+        "hint": "报价数组",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "询报价整理与比较表",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "procurement-tco",
+    "description": "按报价字段实际计算总成本",
+    "executor": "procurement.tco",
+    "domain": "procurement",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "quotes",
+        "hint": "报价数组",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "按报价字段实际计算总成本",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "procurement-risk",
+    "description": "履约风险台账",
+    "executor": "procurement.risk",
+    "domain": "procurement",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "vendors",
+        "hint": "供应商与履约信息",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "履约风险台账",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "procurement-report",
+    "description": "采购评估报告",
+    "executor": "procurement.report",
+    "domain": "procurement",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "quotes",
+        "hint": "报价比较结果",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "采购评估报告",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "governance-inventory",
+    "description": "样本范围的数据资产盘点",
+    "executor": "governance.inventory",
+    "domain": "data-governance",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "samples",
+        "hint": "数据样本",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "样本范围的数据资产盘点",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "governance-catalog",
+    "description": "数据资产目录",
+    "executor": "governance.catalog",
+    "domain": "data-governance",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "assets",
+        "hint": "资产清单",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "数据资产目录",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "governance-standards",
+    "description": "数据标准建议",
+    "executor": "governance.standards",
+    "domain": "data-governance",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "assets",
+        "hint": "资产清单",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "数据标准建议",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "governance-quality-rules",
+    "description": "质量规则定义",
+    "executor": "governance.qualityRules",
+    "domain": "data-governance",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "assets",
+        "hint": "资产清单",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "质量规则定义",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "governance-classification",
+    "description": "分类分级建议",
+    "executor": "governance.classification",
+    "domain": "data-governance",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "assets",
+        "hint": "资产清单",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "分类分级建议",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  },
+  {
+    "name": "governance-roadmap",
+    "description": "区分已验证能力与规划的路线图",
+    "executor": "governance.roadmap",
+    "domain": "data-governance",
+    "version": "1.0.0",
+    "inputs": [
+      {
+        "name": "assets",
+        "hint": "现状",
+        "required": true,
+        "type": "string"
+      }
+    ],
+    "outputs": [
+      "结构化结果",
+      "依据与未知项",
+      "可选成果文件"
+    ],
+    "steps": [
+      "校验必要输入",
+      "读取知识/工具",
+      "执行计算或整理",
+      "分离事实与未知",
+      "生成并校验成果"
+    ],
+    "acceptance": [
+      "事实、假设、建议、待核实项分离",
+      "引用可回到原文",
+      "成果文件真实可打开"
+    ],
+    "resources": [],
+    "whenToUse": "区分已验证能力与规划的路线图",
+    "invocation": {
+      "modelInvocable": true,
+      "userInvocable": true
+    }
+  }
+]

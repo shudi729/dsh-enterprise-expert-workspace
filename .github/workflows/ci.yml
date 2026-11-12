@@ -1,0 +1,37 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24.22.1
+          package-manager-cache: false
+      - name: Install pnpm
+        run: npm install --global pnpm@11.22.0
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Audit production dependencies
+        run: pnpm audit --prod
+      - name: Run capability and behavior verification
+        run: pnpm run verify:all
+      - name: Pack release candidate
+        run: pnpm pack --pack-destination dist
+      - name: Verify packed sources
+        run: pnpm run verify:package
+      - name: Scan packed archive
+        run: pnpm run verify:archive

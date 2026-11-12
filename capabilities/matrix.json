@@ -1,0 +1,530 @@
+{
+  "generatedAt": "2026-11-11T09:03:25.092Z",
+  "experts": [
+    {
+      "expertId": "knowledge-management",
+      "name": "企业经验与知识管理专家",
+      "scenarios": [
+        "项目资料整理",
+        "经验卡",
+        "知识更新",
+        "案例复盘"
+      ],
+      "skills": [
+        "km.review",
+        "km.caseCard",
+        "km.sop",
+        "km.publish",
+        "knowledge.retrieve",
+        "knowledge.ingest"
+      ],
+      "knowledge": [
+        "knowledge-management",
+        "sales-method"
+      ],
+      "tools": [
+        "knowledge.search",
+        "knowledge.import",
+        "knowledge.verify",
+        "files.generate",
+        "tasks.update"
+      ],
+      "deliverables": [
+        "案例卡",
+        "知识条目",
+        "标准作业流程",
+        "复盘报告"
+      ],
+      "acceptance": [
+        "知识引用可回到原文",
+        "待核实内容不自动成为可信规则",
+        "成果含版本与来源"
+      ],
+      "workflows": [
+        "km-review-to-sop"
+      ],
+      "sourceKind": "new"
+    },
+    {
+      "expertId": "hr",
+      "name": "HR 工作台专家",
+      "scenarios": [
+        "岗位分析",
+        "招聘材料",
+        "候选人评估",
+        "入职培养"
+      ],
+      "skills": [
+        "hr.jobAnalysis",
+        "hr.jd",
+        "hr.resumeExtract",
+        "hr.compareCandidates",
+        "hr.interviewDesign",
+        "hr.onboarding"
+      ],
+      "knowledge": [
+        "hr",
+        "knowledge-management"
+      ],
+      "tools": [
+        "files.read",
+        "files.generate",
+        "knowledge.search",
+        "tasks.update"
+      ],
+      "deliverables": [
+        "岗位说明书",
+        "候选人对比表",
+        "面试提纲",
+        "入职培养计划"
+      ],
+      "acceptance": [
+        "评估输出依据与适用条件",
+        "录用/绩效判断标注为用户决定",
+        "简历未识别字段列为未知"
+      ],
+      "workflows": [
+        "hr-recruit",
+        "cross-hr-onboarding"
+      ],
+      "sourceKind": "new"
+    },
+    {
+      "expertId": "personal-workbench",
+      "name": "个人与岗位工作台专家",
+      "scenarios": [
+        "目标拆解",
+        "周月计划",
+        "会议行动",
+        "工作复盘"
+      ],
+      "skills": [
+        "personal.goalBreakdown",
+        "personal.weeklyPlan",
+        "personal.meetingActions",
+        "personal.review",
+        "personal.report",
+        "task.plan",
+        "task.actions"
+      ],
+      "knowledge": [
+        "personal",
+        "knowledge-management"
+      ],
+      "tools": [
+        "tasks.update",
+        "files.generate",
+        "knowledge.search"
+      ],
+      "deliverables": [
+        "任务计划",
+        "行动清单",
+        "周月复盘",
+        "工作报告"
+      ],
+      "acceptance": [
+        "任务含优先级与验收条件",
+        "未给责任/时间的项列为待确认"
+      ],
+      "workflows": [
+        "personal-goal-review"
+      ],
+      "sourceKind": "new"
+    },
+    {
+      "expertId": "management",
+      "name": "企业经营管理专家",
+      "scenarios": [
+        "经营数据诊断",
+        "问题分析",
+        "流程制度",
+        "责任协作"
+      ],
+      "skills": [
+        "management.diagnose",
+        "management.improvePlan",
+        "management.responsibility",
+        "management.report"
+      ],
+      "knowledge": [
+        "management",
+        "knowledge-management"
+      ],
+      "tools": [
+        "data.metrics",
+        "data.compare",
+        "files.generate",
+        "tasks.update"
+      ],
+      "deliverables": [
+        "经营诊断表",
+        "改进计划",
+        "职责矩阵",
+        "经营报告"
+      ],
+      "acceptance": [
+        "偏差由真实数值计算",
+        "缺数值的指标不推断",
+        "改进计划含责任与复查"
+      ],
+      "workflows": [
+        "management-improve"
+      ],
+      "sourceKind": "new"
+    },
+    {
+      "expertId": "key-account-sales",
+      "name": "大客户销售专家",
+      "scenarios": [
+        "客户研究",
+        "商机评估",
+        "方案与拜访",
+        "采购投标",
+        "交付回款"
+      ],
+      "skills": [
+        "sales.accountResearch",
+        "sales.opportunityCard",
+        "sales.visitPlan",
+        "sales.material",
+        "sales.coach"
+      ],
+      "knowledge": [
+        "sales-method",
+        "sales-cases"
+      ],
+      "tools": [
+        "knowledge.search",
+        "files.generate",
+        "tasks.update"
+      ],
+      "deliverables": [
+        "客户分析",
+        "商机卡",
+        "拜访计划",
+        "销售材料"
+      ],
+      "acceptance": [
+        "事实与假设分离",
+        "商机字段不套用其它领域模板",
+        "引用回到销售原文"
+      ],
+      "workflows": [
+        "sales-opportunity"
+      ],
+      "sourceKind": "migrated"
+    },
+    {
+      "expertId": "market-research",
+      "name": "市场与商业研究专家",
+      "scenarios": [
+        "行业研究",
+        "企业研究",
+        "竞品比较",
+        "客户简报"
+      ],
+      "skills": [
+        "research.plan",
+        "research.collect",
+        "research.verify",
+        "research.report",
+        "research.opportunities"
+      ],
+      "knowledge": [
+        "market-intelligence",
+        "sales-method"
+      ],
+      "tools": [
+        "knowledge.search",
+        "knowledge.import",
+        "files.generate"
+      ],
+      "deliverables": [
+        "行业报告",
+        "客户简报",
+        "竞品比较",
+        "机会清单"
+      ],
+      "acceptance": [
+        "每条结论标注来源与证据",
+        "未核实情报不写成事实",
+        "报告可回溯到原文"
+      ],
+      "workflows": [
+        "research-report",
+        "cross-research-sales"
+      ],
+      "sourceKind": "new"
+    },
+    {
+      "expertId": "data-analysis",
+      "name": "数据分析专家",
+      "scenarios": [
+        "文件导入",
+        "质量检查",
+        "指标计算",
+        "比较分析",
+        "结论解释"
+      ],
+      "skills": [
+        "data.profile",
+        "data.clean",
+        "data.quality",
+        "data.metrics",
+        "data.compare",
+        "data.chart",
+        "analysis.conclusion",
+        "report.build"
+      ],
+      "knowledge": [
+        "data-analysis"
+      ],
+      "tools": [
+        "files.read",
+        "files.generate",
+        "data.metrics"
+      ],
+      "deliverables": [
+        "处理记录",
+        "质量报告",
+        "指标表",
+        "图表与可复核表格",
+        "分析报告"
+      ],
+      "acceptance": [
+        "指标由输入实际计算",
+        "清洗有可复核记录",
+        "结论区分统计事实与业务归因"
+      ],
+      "workflows": [
+        "data-analysis",
+        "cross-management-improve"
+      ],
+      "sourceKind": "new"
+    },
+    {
+      "expertId": "document-office",
+      "name": "文档与办公处理专家",
+      "scenarios": [
+        "资料提取",
+        "文档比较",
+        "模板填充",
+        "材料导出"
+      ],
+      "skills": [
+        "document.extract",
+        "document.compare",
+        "document.templateFill",
+        "document.compose",
+        "document.deliver"
+      ],
+      "knowledge": [
+        "document"
+      ],
+      "tools": [
+        "files.read",
+        "files.generate",
+        "files.verify"
+      ],
+      "deliverables": [
+        "Markdown/TXT/CSV/JSON/PDF/DOCX/XLSX/PPTX 成果"
+      ],
+      "acceptance": [
+        "逐项标明格式支持操作",
+        "生成文件真实可打开且回读校验",
+        "模板有结构与字段要求"
+      ],
+      "workflows": [
+        "document-deliver"
+      ],
+      "sourceKind": "new"
+    },
+    {
+      "expertId": "procurement",
+      "name": "采购与供应商管理专家",
+      "scenarios": [
+        "采购需求",
+        "供应商研究",
+        "询报价比较",
+        "履约风险"
+      ],
+      "skills": [
+        "procurement.requirement",
+        "procurement.vendorScan",
+        "procurement.quoteCompare",
+        "procurement.tco",
+        "procurement.risk",
+        "procurement.report"
+      ],
+      "knowledge": [
+        "procurement",
+        "market-intelligence"
+      ],
+      "tools": [
+        "files.read",
+        "files.generate",
+        "knowledge.search"
+      ],
+      "deliverables": [
+        "需求清单",
+        "供应商台账",
+        "比价表",
+        "TCO 测算",
+        "评估报告"
+      ],
+      "acceptance": [
+        "保留证据与未知项",
+        "TCO 由报价实际计算",
+        "供应商选择标注为用户决定"
+      ],
+      "workflows": [
+        "procurement-evaluate"
+      ],
+      "sourceKind": "new"
+    },
+    {
+      "expertId": "data-governance",
+      "name": "企业数据治理专家",
+      "scenarios": [
+        "资产盘点",
+        "目录与标准",
+        "质量规则",
+        "治理路线图"
+      ],
+      "skills": [
+        "governance.inventory",
+        "governance.catalog",
+        "governance.standards",
+        "governance.qualityRules",
+        "governance.classification",
+        "governance.roadmap"
+      ],
+      "knowledge": [
+        "data-governance"
+      ],
+      "tools": [
+        "data.profile",
+        "data.quality",
+        "files.generate"
+      ],
+      "deliverables": [
+        "资产目录",
+        "标准与规则",
+        "分类分级建议",
+        "治理路线图"
+      ],
+      "acceptance": [
+        "区分已验证能力与规划建议",
+        "无接入证据不宣称全量扫描/血缘/权限治理"
+      ],
+      "workflows": [
+        "governance-plan"
+      ],
+      "sourceKind": "new"
+    }
+  ],
+  "sharedSkills": [
+    "knowledge-retrieve",
+    "knowledge-ingest",
+    "knowledge-verify",
+    "task-plan",
+    "task-actions",
+    "task-review",
+    "report-build",
+    "external-confirm"
+  ],
+  "crossDomainChains": [
+    {
+      "id": "cross-hr-onboarding",
+      "nodes": [
+        "hr-job-analysis",
+        "hr-compare-candidates",
+        "hr-onboarding",
+        "personal-goal-breakdown",
+        "knowledge-retrieve"
+      ]
+    },
+    {
+      "id": "cross-research-sales",
+      "nodes": [
+        "research-collect",
+        "research-verify",
+        "sales-account-research",
+        "sales-opportunity-card",
+        "sales-material"
+      ]
+    },
+    {
+      "id": "cross-management-improve",
+      "nodes": [
+        "data-metrics",
+        "management-diagnose",
+        "management-responsibility",
+        "task-plan",
+        "km-review"
+      ]
+    }
+  ],
+  "fileFormats": [
+    {
+      "format": "md",
+      "read": true,
+      "generate": true,
+      "verify": true,
+      "note": "UTF-8 Markdown，按标题分节"
+    },
+    {
+      "format": "txt",
+      "read": true,
+      "generate": true,
+      "verify": true,
+      "note": "UTF-8 纯文本"
+    },
+    {
+      "format": "csv",
+      "read": true,
+      "generate": true,
+      "verify": true,
+      "note": "逗号分隔，首行表头，支持引号转义"
+    },
+    {
+      "format": "json",
+      "read": true,
+      "generate": true,
+      "verify": true,
+      "note": "结构化成果与导入导出"
+    },
+    {
+      "format": "pdf",
+      "read": true,
+      "generate": true,
+      "verify": "ascii",
+      "note": "读取用 pdf-parse；生成用 pdfkit，中文需系统中文字体，回读校验用 ASCII 标记"
+    },
+    {
+      "format": "docx",
+      "read": true,
+      "generate": true,
+      "verify": true,
+      "note": "读取提取 word/document.xml；生成用 docx 包"
+    },
+    {
+      "format": "xlsx",
+      "read": true,
+      "generate": true,
+      "verify": true,
+      "note": "读取/生成用内置 Open XML 处理器"
+    },
+    {
+      "format": "pptx",
+      "read": true,
+      "generate": true,
+      "verify": true,
+      "note": "读取提取 ppt/slides/*.xml；生成用内置 Open XML 模板"
+    }
+  ],
+  "assetIndex": {
+    "total": 138,
+    "duplicatesByHash": 20
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "name": "dsh-enterprise-expert-workspace",
+  "version": "1.6.0",
+  "description": "企业 AI 专家工作台：把资料转成可追溯任务、跨部门工作流和可下载成果，覆盖知识、人力、销售、采购、数据与文档。",
+  "type": "module",
+  "main": "./index.js",
+  "icon": "./icon.svg",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "dsh-bundle",
+    "enterprise",
+    "expert-workspace",
+    "knowledge",
+    "workflow",
+    "企业AI",
+    "知识管理",
+    "人力资源",
+    "大客户销售",
+    "采购管理",
+    "数据分析",
+    "数据治理",
+    "企业专家工作台",
+    "DeepSeek插件",
+    "DSH插件"
+  ],
+  "license": "MIT",
+  "author": "shudi729",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shudi729/dsh-enterprise-expert-workspace.git"
+  },
+  "homepage": "https://github.com/shudi729/dsh-enterprise-expert-workspace#readme",
+  "bugs": {
+    "url": "https://github.com/shudi729/dsh-enterprise-expert-workspace/issues"
+  },
+  "engines": {
+    "node": ">=20.16.0",
+    "dsh": ">=0.2.1-rc.5 <0.3.0"
+  },
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./core/*": "./src/core/*.js",
+    "./capabilities/*": "./capabilities/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "icon.svg",
+    "README.md",
+    "src/**",
+    "capabilities/**",
+    "assets/**",
+    "docs/**",
+    "LICENSE",
+    "SECURITY.md",
+    "CHANGELOG.md",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "dsh": {
+    "manifestVersion": 1,
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-locale",
+        "@deepseek-ai/dsh-client-ui-sidebar",
+        "@deepseek-ai/dsh-client-ui-layout"
+      ]
+    }
+  },
+  "dependencies": {
+    "docx": "9.5.1",
+    "js-yaml": "4.3.2",
+    "jszip": "3.10.1",
+    "pdf-parse": "1.1.1",
+    "pdfkit": "0.15.2"
+  },
+  "scripts": {
+    "verify:matrix": "node scripts/verify-matrix.js",
+    "verify:release": "node scripts/verify-release.js",
+    "pack": "pnpm pack --pack-destination dist",
+    "verify:package": "node scripts/verify-package.js",
+    "verify:archive": "node scripts/scan-package.js",
+    "test": "node --test test/unit/*.test.js test/e2e/*.test.js",
+    "verify:all": "node scripts/verify-matrix.js && node scripts/verify-release.js && node --test test/unit/*.test.js test/e2e/*.test.js",
+    "prepublishOnly": "pnpm run verify:all"
+  },
+  "packageManager": "pnpm@11.22.0",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

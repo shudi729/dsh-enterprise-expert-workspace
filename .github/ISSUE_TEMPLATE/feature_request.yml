@@ -1,0 +1,24 @@
+name: 功能建议
+description: 建议新的业务场景、工作流或体验改进
+title: "[Feature] "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 要解决的问题
+      description: 请描述用户、业务情境和当前卡点，而不只是功能名称。
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: 期望成果
+      description: 用户应提供什么资料，最终应得到什么可验证成果？
+    validations:
+      required: true
+  - type: textarea
+    id: boundaries
+    attributes:
+      label: 风险与边界
+      description: 是否涉及外部系统、敏感数据、权限或不可逆操作？

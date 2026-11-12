@@ -1,0 +1,949 @@
+[
+  {
+    "id": "km-review-to-sop",
+    "name": "项目资料→复盘→经验卡→审核入库→SOP",
+    "expertId": "knowledge-management",
+    "input": [
+      {
+        "name": "project",
+        "hint": "项目名称",
+        "required": true
+      },
+      {
+        "name": "material",
+        "hint": "项目资料",
+        "required": true
+      },
+      {
+        "name": "docId",
+        "hint": "待审核知识条目",
+        "required": true
+      }
+    ],
+    "nodes": [
+      {
+        "id": "review",
+        "skill": "km-review",
+        "requires": [],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "card",
+        "skill": "km-case-card",
+        "requires": [
+          "review"
+        ],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "publish",
+        "skill": "km-publish",
+        "requires": [
+          "card"
+        ],
+        "input": {},
+        "produces": [],
+        "externalEffect": true,
+        "confirmationPrompt": "确认把该经验卡设为可信知识？"
+      },
+      {
+        "id": "sop",
+        "skill": "km-sop",
+        "requires": [
+          "publish"
+        ],
+        "input": {},
+        "produces": []
+      }
+    ],
+    "acceptance": [
+      "输入齐全时能调用正确能力",
+      "资料不足时区分事实与未知",
+      "引用可回到原文",
+      "状态可保存并继续",
+      "文件真实可打开",
+      "依赖失败有明确反馈"
+    ],
+    "finalTaskStatus": "completed"
+  },
+  {
+    "id": "hr-recruit",
+    "name": "岗位需求→招聘材料→候选人评估→面试",
+    "expertId": "hr",
+    "input": [
+      {
+        "name": "role",
+        "hint": "岗位名称",
+        "required": true
+      },
+      {
+        "name": "responsibilities",
+        "hint": "职责清单",
+        "required": true
+      },
+      {
+        "name": "requirements",
+        "hint": "任职要求",
+        "required": true
+      },
+      {
+        "name": "candidates",
+        "hint": "候选人数组",
+        "required": true
+      }
+    ],
+    "nodes": [
+      {
+        "id": "analysis",
+        "skill": "hr-job-analysis",
+        "requires": [],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "jd",
+        "skill": "hr-jd",
+        "requires": [
+          "analysis"
+        ],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "compare",
+        "skill": "hr-compare-candidates",
+        "requires": [
+          "jd"
+        ],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "interview",
+        "skill": "hr-interview-design",
+        "requires": [
+          "compare"
+        ],
+        "input": {},
+        "produces": []
+      }
+    ],
+    "acceptance": [
+      "输入齐全时能调用正确能力",
+      "资料不足时区分事实与未知",
+      "引用可回到原文",
+      "状态可保存并继续",
+      "文件真实可打开",
+      "依赖失败有明确反馈"
+    ],
+    "finalTaskStatus": "completed"
+  },
+  {
+    "id": "personal-goal-review",
+    "name": "目标→任务→执行反馈→复盘",
+    "expertId": "personal-workbench",
+    "input": [
+      {
+        "name": "goal",
+        "hint": "目标",
+        "required": true
+      },
+      {
+        "name": "feedback",
+        "hint": "执行反馈",
+        "required": true
+      },
+      {
+        "name": "meetingNotes",
+        "hint": "会议纪要",
+        "required": true
+      }
+    ],
+    "nodes": [
+      {
+        "id": "breakdown",
+        "skill": "personal-goal-breakdown",
+        "requires": [],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "actions",
+        "skill": "personal-meeting-actions",
+        "requires": [
+          "breakdown"
+        ],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "review",
+        "skill": "personal-review",
+        "requires": [
+          "actions"
+        ],
+        "input": {},
+        "produces": []
+      }
+    ],
+    "acceptance": [
+      "输入齐全时能调用正确能力",
+      "资料不足时区分事实与未知",
+      "引用可回到原文",
+      "状态可保存并继续",
+      "文件真实可打开",
+      "依赖失败有明确反馈"
+    ],
+    "finalTaskStatus": "completed"
+  },
+  {
+    "id": "management-improve",
+    "name": "经营数据→问题→改进计划→责任与复查",
+    "expertId": "management",
+    "input": [
+      {
+        "name": "metrics",
+        "hint": "经营指标",
+        "required": true
+      },
+      {
+        "name": "problems",
+        "hint": "问题清单",
+        "required": true
+      },
+      {
+        "name": "actions",
+        "hint": "行动清单",
+        "required": true
+      }
+    ],
+    "nodes": [
+      {
+        "id": "diagnose",
+        "skill": "management-diagnose",
+        "requires": [],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "plan",
+        "skill": "management-improve-plan",
+        "requires": [
+          "diagnose"
+        ],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "owners",
+        "skill": "management-responsibility",
+        "requires": [
+          "plan"
+        ],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "report",
+        "skill": "management-report",
+        "requires": [
+          "owners"
+        ],
+        "input": {},
+        "produces": []
+      }
+    ],
+    "acceptance": [
+      "输入齐全时能调用正确能力",
+      "资料不足时区分事实与未知",
+      "引用可回到原文",
+      "状态可保存并继续",
+      "文件真实可打开",
+      "依赖失败有明确反馈"
+    ],
+    "finalTaskStatus": "completed"
+  },
+  {
+    "id": "sales-opportunity",
+    "name": "客户问题→证据→判断→行动→反馈",
+    "expertId": "key-account-sales",
+    "input": [
+      {
+        "name": "customer",
+        "hint": "客户名称",
+        "required": true
+      },
+      {
+        "name": "material",
+        "hint": "客户资料",
+        "required": true
+      },
+      {
+        "name": "objective",
+        "hint": "拜访目标",
+        "required": true
+      }
+    ],
+    "nodes": [
+      {
+        "id": "research",
+        "skill": "sales-account-research",
+        "requires": [],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "card",
+        "skill": "sales-opportunity-card",
+        "requires": [
+          "research"
+        ],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "visit",
+        "skill": "sales-visit-plan",
+        "requires": [
+          "card"
+        ],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "material",
+        "skill": "sales-material",
+        "requires": [
+          "visit"
+        ],
+        "input": {},
+        "produces": []
+      }
+    ],
+    "acceptance": [
+      "输入齐全时能调用正确能力",
+      "资料不足时区分事实与未知",
+      "引用可回到原文",
+      "状态可保存并继续",
+      "文件真实可打开",
+      "依赖失败有明确反馈"
+    ],
+    "finalTaskStatus": "completed"
+  },
+  {
+    "id": "research-report",
+    "name": "研究问题→检索→核验→分析→报告",
+    "expertId": "market-research",
+    "input": [
+      {
+        "name": "question",
+        "hint": "研究问题",
+        "required": true
+      },
+      {
+        "name": "sources",
+        "hint": "来源清单",
+        "required": true
+      },
+      {
+        "name": "claims",
+        "hint": "待核验结论",
+        "required": true
+      }
+    ],
+    "nodes": [
+      {
+        "id": "plan",
+        "skill": "research-plan",
+        "requires": [],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "collect",
+        "skill": "research-collect",
+        "requires": [
+          "plan"
+        ],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "verify",
+        "skill": "research-verify",
+        "requires": [
+          "collect"
+        ],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "report",
+        "skill": "research-report",
+        "requires": [
+          "verify"
+        ],
+        "input": {},
+        "produces": []
+      }
+    ],
+    "acceptance": [
+      "输入齐全时能调用正确能力",
+      "资料不足时区分事实与未知",
+      "引用可回到原文",
+      "状态可保存并继续",
+      "文件真实可打开",
+      "依赖失败有明确反馈"
+    ],
+    "finalTaskStatus": "completed"
+  },
+  {
+    "id": "data-analysis",
+    "name": "原始数据→处理记录→分析→图表→结论",
+    "expertId": "data-analysis",
+    "input": [
+      {
+        "name": "rows",
+        "hint": "表格数据",
+        "required": true
+      },
+      {
+        "name": "field",
+        "hint": "数值字段",
+        "required": true
+      },
+      {
+        "name": "metrics",
+        "hint": "指标结果",
+        "required": true
+      }
+    ],
+    "nodes": [
+      {
+        "id": "profile",
+        "skill": "data-profile",
+        "requires": [],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "clean",
+        "skill": "data-clean",
+        "requires": [
+          "profile"
+        ],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "quality",
+        "skill": "data-quality",
+        "requires": [
+          "clean"
+        ],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "metrics",
+        "skill": "data-metrics",
+        "requires": [
+          "quality"
+        ],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "conclusion",
+        "skill": "analysis-conclusion",
+        "requires": [
+          "metrics"
+        ],
+        "input": {},
+        "produces": []
+      }
+    ],
+    "acceptance": [
+      "输入齐全时能调用正确能力",
+      "资料不足时区分事实与未知",
+      "引用可回到原文",
+      "状态可保存并继续",
+      "文件真实可打开",
+      "依赖失败有明确反馈"
+    ],
+    "finalTaskStatus": "completed"
+  },
+  {
+    "id": "document-deliver",
+    "name": "输入资料→提取核实→形成材料→质量检查→导出",
+    "expertId": "document-office",
+    "input": [
+      {
+        "name": "material",
+        "hint": "输入资料",
+        "required": true
+      },
+      {
+        "name": "leftText",
+        "hint": "文本 A",
+        "required": true
+      },
+      {
+        "name": "title",
+        "hint": "成果标题",
+        "required": true
+      }
+    ],
+    "nodes": [
+      {
+        "id": "compose",
+        "skill": "document-compose",
+        "requires": [],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "check",
+        "skill": "document-template-fill",
+        "requires": [
+          "compose"
+        ],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "compare",
+        "skill": "document-compare",
+        "requires": [
+          "check"
+        ],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "deliver",
+        "skill": "document-deliver",
+        "requires": [
+          "compare"
+        ],
+        "input": {},
+        "produces": []
+      }
+    ],
+    "acceptance": [
+      "输入齐全时能调用正确能力",
+      "资料不足时区分事实与未知",
+      "引用可回到原文",
+      "状态可保存并继续",
+      "文件真实可打开",
+      "依赖失败有明确反馈"
+    ],
+    "finalTaskStatus": "completed"
+  },
+  {
+    "id": "procurement-evaluate",
+    "name": "需求→候选供应商→询报价→比较→评估报告",
+    "expertId": "procurement",
+    "input": [
+      {
+        "name": "requirement",
+        "hint": "需求说明",
+        "required": true
+      },
+      {
+        "name": "vendors",
+        "hint": "候选供应商",
+        "required": true
+      },
+      {
+        "name": "quotes",
+        "hint": "报价数组",
+        "required": true
+      }
+    ],
+    "nodes": [
+      {
+        "id": "requirement",
+        "skill": "procurement-requirement",
+        "requires": [],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "scan",
+        "skill": "procurement-vendor-scan",
+        "requires": [
+          "requirement"
+        ],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "compare",
+        "skill": "procurement-quote-compare",
+        "requires": [
+          "scan"
+        ],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "tco",
+        "skill": "procurement-tco",
+        "requires": [
+          "compare"
+        ],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "report",
+        "skill": "procurement-report",
+        "requires": [
+          "tco"
+        ],
+        "input": {},
+        "produces": []
+      }
+    ],
+    "acceptance": [
+      "输入齐全时能调用正确能力",
+      "资料不足时区分事实与未知",
+      "引用可回到原文",
+      "状态可保存并继续",
+      "文件真实可打开",
+      "依赖失败有明确反馈"
+    ],
+    "finalTaskStatus": "completed"
+  },
+  {
+    "id": "governance-plan",
+    "name": "样本与现状→问题盘点→标准与规则→路线图",
+    "expertId": "data-governance",
+    "input": [
+      {
+        "name": "samples",
+        "hint": "数据样本",
+        "required": true
+      },
+      {
+        "name": "assets",
+        "hint": "资产清单",
+        "required": true
+      }
+    ],
+    "nodes": [
+      {
+        "id": "inventory",
+        "skill": "governance-inventory",
+        "requires": [],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "catalog",
+        "skill": "governance-catalog",
+        "requires": [
+          "inventory"
+        ],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "rules",
+        "skill": "governance-quality-rules",
+        "requires": [
+          "catalog"
+        ],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "roadmap",
+        "skill": "governance-roadmap",
+        "requires": [
+          "rules"
+        ],
+        "input": {},
+        "produces": []
+      }
+    ],
+    "acceptance": [
+      "输入齐全时能调用正确能力",
+      "资料不足时区分事实与未知",
+      "引用可回到原文",
+      "状态可保存并继续",
+      "文件真实可打开",
+      "依赖失败有明确反馈"
+    ],
+    "finalTaskStatus": "completed"
+  },
+  {
+    "id": "cross-hr-onboarding",
+    "name": "招聘与入职：HR→专业考察→岗位入职→知识关联",
+    "expertId": "hr",
+    "input": [
+      {
+        "name": "role",
+        "hint": "岗位名称",
+        "required": true
+      },
+      {
+        "name": "responsibilities",
+        "hint": "职责清单",
+        "required": true
+      },
+      {
+        "name": "requirements",
+        "hint": "任职要求",
+        "required": true
+      },
+      {
+        "name": "candidates",
+        "hint": "候选人数组",
+        "required": true
+      },
+      {
+        "name": "goal",
+        "hint": "入职目标",
+        "required": true
+      }
+    ],
+    "nodes": [
+      {
+        "id": "analysis",
+        "skill": "hr-job-analysis",
+        "requires": [],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "compare",
+        "skill": "hr-compare-candidates",
+        "requires": [
+          "analysis"
+        ],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "onboarding",
+        "skill": "hr-onboarding",
+        "requires": [
+          "compare"
+        ],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "plan",
+        "skill": "personal-goal-breakdown",
+        "requires": [
+          "onboarding"
+        ],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "knowledge",
+        "skill": "knowledge-retrieve",
+        "requires": [
+          "plan"
+        ],
+        "input": {},
+        "produces": []
+      }
+    ],
+    "acceptance": [
+      "输入齐全时能调用正确能力",
+      "资料不足时区分事实与未知",
+      "引用可回到原文",
+      "状态可保存并继续",
+      "文件真实可打开",
+      "依赖失败有明确反馈",
+      "结构化结果与引用在专家间实际传递"
+    ],
+    "finalTaskStatus": "completed"
+  },
+  {
+    "id": "cross-research-sales",
+    "name": "市场研究与销售推进：证据→机会判断→材料→商机记录",
+    "expertId": "market-research",
+    "input": [
+      {
+        "name": "question",
+        "hint": "研究问题",
+        "required": true
+      },
+      {
+        "name": "sources",
+        "hint": "来源清单",
+        "required": true
+      },
+      {
+        "name": "claims",
+        "hint": "待核验结论",
+        "required": true
+      },
+      {
+        "name": "customer",
+        "hint": "客户名称",
+        "required": true
+      },
+      {
+        "name": "material",
+        "hint": "客户资料",
+        "required": true
+      }
+    ],
+    "nodes": [
+      {
+        "id": "collect",
+        "skill": "research-collect",
+        "requires": [],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "verify",
+        "skill": "research-verify",
+        "requires": [
+          "collect"
+        ],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "research",
+        "skill": "sales-account-research",
+        "requires": [
+          "verify"
+        ],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "card",
+        "skill": "sales-opportunity-card",
+        "requires": [
+          "research"
+        ],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "material",
+        "skill": "sales-material",
+        "requires": [
+          "card"
+        ],
+        "input": {},
+        "produces": []
+      }
+    ],
+    "acceptance": [
+      "输入齐全时能调用正确能力",
+      "资料不足时区分事实与未知",
+      "引用可回到原文",
+      "状态可保存并继续",
+      "文件真实可打开",
+      "依赖失败有明确反馈",
+      "市场证据作为销售判断的引用来源"
+    ],
+    "finalTaskStatus": "completed"
+  },
+  {
+    "id": "cross-management-improve",
+    "name": "经营分析与改进：指标→诊断→责任行动→复盘入库",
+    "expertId": "data-analysis",
+    "input": [
+      {
+        "name": "rows",
+        "hint": "表格数据",
+        "required": true
+      },
+      {
+        "name": "field",
+        "hint": "数值字段",
+        "required": true
+      },
+      {
+        "name": "metrics",
+        "hint": "经营指标",
+        "required": true
+      },
+      {
+        "name": "problems",
+        "hint": "问题清单",
+        "required": true
+      },
+      {
+        "name": "actions",
+        "hint": "行动清单",
+        "required": true
+      },
+      {
+        "name": "material",
+        "hint": "复盘材料",
+        "required": true
+      }
+    ],
+    "nodes": [
+      {
+        "id": "metrics",
+        "skill": "data-metrics",
+        "requires": [],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "diagnose",
+        "skill": "management-diagnose",
+        "requires": [
+          "metrics"
+        ],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "owners",
+        "skill": "management-responsibility",
+        "requires": [
+          "diagnose"
+        ],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "plan",
+        "skill": "task-plan",
+        "requires": [
+          "owners"
+        ],
+        "input": {},
+        "produces": []
+      },
+      {
+        "id": "review",
+        "skill": "km-review",
+        "requires": [
+          "plan"
+        ],
+        "input": {},
+        "produces": []
+      }
+    ],
+    "acceptance": [
+      "输入齐全时能调用正确能力",
+      "资料不足时区分事实与未知",
+      "引用可回到原文",
+      "状态可保存并继续",
+      "文件真实可打开",
+      "依赖失败有明确反馈",
+      "指标结果传入经营诊断并继续到复盘"
+    ],
+    "finalTaskStatus": "completed"
+  }
+]

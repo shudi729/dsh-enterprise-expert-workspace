@@ -1,0 +1,6 @@
+# Enterprise Expert Workspace bundle patch.
+# The inserted Host row registers the HTTP API and the domain skills; the
+# package's `dsh.client` declaration adds the Web workbench as the Client half.
+- insert:
+    - id: enterprise-expert-workspace
+      name: dsh-enterprise-expert-workspace
